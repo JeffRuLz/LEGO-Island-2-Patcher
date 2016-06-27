@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace LegoIsland2Patcher
 {
@@ -83,6 +84,15 @@ namespace LegoIsland2Patcher
 
             applyPatch(cbSiliconLogo.Checked);
 
+            //Unskippable Silicon Dreams Logo
+            {
+                byte[] newPatch = { 0x00 };
+                patch = newPatch;
+            }
+            offset = 0x00002B11;
+
+            applyPatch(cbUnskippableSilicon.Checked);
+
             //No Intro Video
             {
                 byte[] newPatch = { 0x90, 0x90, 0x90, 0x90, 0x90 };
@@ -91,6 +101,15 @@ namespace LegoIsland2Patcher
             offset = 0x00002B56;
 
             applyPatch(cbNoIntro.Checked);
+
+            //Unskippable Intro Video
+            {
+                byte[] newPatch = { 0x00 };
+                patch = newPatch;
+            }
+            offset = 0x00002B47;
+
+            applyPatch(cbUnskippableIntro.Checked);
 
             //Load Time Fix
             {
@@ -188,6 +207,14 @@ namespace LegoIsland2Patcher
             offset = 0x00002B20;
             cbSiliconLogo.Checked = scanForPatch();
 
+            //Unskippable Silicon Dreams Logo
+            {
+                byte[] newPatch = { 0x00 };
+                patch = newPatch;
+            }
+            offset = 0x00002B11;
+            cbUnskippableSilicon.Checked = scanForPatch();
+
             //No Intro Video
             {
                 byte[] newPatch = { 0x90, 0x90, 0x90, 0x90, 0x90 };
@@ -195,6 +222,15 @@ namespace LegoIsland2Patcher
             }
             offset = 0x00002B56;
             cbNoIntro.Checked = scanForPatch();
+
+            //Unskippable Intro Video
+            {
+                byte[] newPatch = { 0x00 };
+                patch = newPatch;
+            }
+            offset = 0x00002B47;
+
+            cbUnskippableIntro.Checked = scanForPatch();
 
             //Load Time Fix
             {
@@ -250,6 +286,18 @@ namespace LegoIsland2Patcher
             }
 
             return result;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("http://www.rockraidersunited.com/");
+            Process.Start(sInfo);
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("http://www.github.com/JeffRuLz/LEGO-Island-2-Patcher");
+            Process.Start(sInfo);
         }
 
     }

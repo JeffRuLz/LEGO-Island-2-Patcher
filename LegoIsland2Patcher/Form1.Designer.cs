@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.LinkLabel linkLabel1;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbForce = new System.Windows.Forms.CheckBox();
             this.cbLevelSelect = new System.Windows.Forms.CheckBox();
             this.cbWindowedMode = new System.Windows.Forms.CheckBox();
+            this.cbLoadTimes = new System.Windows.Forms.CheckBox();
             this.cbNoIntro = new System.Windows.Forms.CheckBox();
             this.cbSiliconLogo = new System.Windows.Forms.CheckBox();
             this.cbLegoLogo = new System.Windows.Forms.CheckBox();
-            this.cbLoadTimes = new System.Windows.Forms.CheckBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbLegoSkippable = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.cbUnskippableSilicon = new System.Windows.Forms.CheckBox();
+            this.cbUnskippableIntro = new System.Windows.Forms.CheckBox();
+            linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -90,10 +94,20 @@
             this.cbWindowedMode.Text = "Windowed Mode";
             this.cbWindowedMode.UseVisualStyleBackColor = true;
             // 
+            // cbLoadTimes
+            // 
+            this.cbLoadTimes.AutoSize = true;
+            this.cbLoadTimes.Location = new System.Drawing.Point(7, 20);
+            this.cbLoadTimes.Name = "cbLoadTimes";
+            this.cbLoadTimes.Size = new System.Drawing.Size(92, 17);
+            this.cbLoadTimes.TabIndex = 0;
+            this.cbLoadTimes.Text = "Load Time Fix";
+            this.cbLoadTimes.UseVisualStyleBackColor = true;
+            // 
             // cbNoIntro
             // 
             this.cbNoIntro.AutoSize = true;
-            this.cbNoIntro.Location = new System.Drawing.Point(6, 89);
+            this.cbNoIntro.Location = new System.Drawing.Point(6, 112);
             this.cbNoIntro.Name = "cbNoIntro";
             this.cbNoIntro.Size = new System.Drawing.Size(94, 17);
             this.cbNoIntro.TabIndex = 3;
@@ -120,19 +134,9 @@
             this.cbLegoLogo.Text = "No LEGO Software Logo";
             this.cbLegoLogo.UseVisualStyleBackColor = true;
             // 
-            // cbLoadTimes
-            // 
-            this.cbLoadTimes.AutoSize = true;
-            this.cbLoadTimes.Location = new System.Drawing.Point(7, 20);
-            this.cbLoadTimes.Name = "cbLoadTimes";
-            this.cbLoadTimes.Size = new System.Drawing.Size(92, 17);
-            this.cbLoadTimes.TabIndex = 0;
-            this.cbLoadTimes.Text = "Load Time Fix";
-            this.cbLoadTimes.UseVisualStyleBackColor = true;
-            // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(12, 258);
+            this.btnApply.Location = new System.Drawing.Point(12, 299);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 0;
@@ -142,13 +146,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbUnskippableIntro);
+            this.groupBox2.Controls.Add(this.cbUnskippableSilicon);
             this.groupBox2.Controls.Add(this.cbLegoSkippable);
             this.groupBox2.Controls.Add(this.cbLegoLogo);
             this.groupBox2.Controls.Add(this.cbSiliconLogo);
             this.groupBox2.Controls.Add(this.cbNoIntro);
             this.groupBox2.Location = new System.Drawing.Point(12, 134);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 118);
+            this.groupBox2.Size = new System.Drawing.Size(221, 159);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Intro";
@@ -175,7 +181,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(242, 200);
+            this.label2.Location = new System.Drawing.Point(242, 211);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 52);
             this.label2.TabIndex = 4;
@@ -184,13 +190,14 @@
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(242, 268);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(138, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "www.rockraidersunited.com";
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new System.Drawing.Point(242, 280);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new System.Drawing.Size(138, 13);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "www.rockraidersunited.com";
+            linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label3
             // 
@@ -201,13 +208,45 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Note: Some patches may\r\nnot be compatible with\r\nevery revision of\r\nLego Island 2";
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(133, 304);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(247, 13);
+            this.linkLabel2.TabIndex = 8;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "www.github.com/JeffRuLz/LEGO-Island-2-Patcher";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // cbUnskippableSilicon
+            // 
+            this.cbUnskippableSilicon.AutoSize = true;
+            this.cbUnskippableSilicon.Location = new System.Drawing.Point(6, 89);
+            this.cbUnskippableSilicon.Name = "cbUnskippableSilicon";
+            this.cbUnskippableSilicon.Size = new System.Drawing.Size(185, 17);
+            this.cbUnskippableSilicon.TabIndex = 4;
+            this.cbUnskippableSilicon.Text = "Unskippable Silicon Dreams Logo";
+            this.cbUnskippableSilicon.UseVisualStyleBackColor = true;
+            // 
+            // cbUnskippableIntro
+            // 
+            this.cbUnskippableIntro.AutoSize = true;
+            this.cbUnskippableIntro.Location = new System.Drawing.Point(6, 135);
+            this.cbUnskippableIntro.Name = "cbUnskippableIntro";
+            this.cbUnskippableIntro.Size = new System.Drawing.Size(139, 17);
+            this.cbUnskippableIntro.TabIndex = 5;
+            this.cbUnskippableIntro.Text = "Unskippable Intro Video";
+            this.cbUnskippableIntro.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 291);
+            this.ClientSize = new System.Drawing.Size(394, 332);
+            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -240,8 +279,10 @@
         private System.Windows.Forms.CheckBox cbLegoSkippable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.CheckBox cbUnskippableIntro;
+        private System.Windows.Forms.CheckBox cbUnskippableSilicon;
     }
 }
 
