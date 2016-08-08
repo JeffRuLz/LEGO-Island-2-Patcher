@@ -29,6 +29,8 @@ Unzip, and place into your LEGO Island 2 installation folder. (Where your LEGO I
 
 Run it, choose your patches and click "Apply".
 
+Note: Do NOT delete the "LEGO Island 2.exe.backup" file. It is needed to undo patches.
+
 #Credits
 Iran: Researching and discovering these patches
 
