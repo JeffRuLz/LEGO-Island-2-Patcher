@@ -4,7 +4,7 @@ http://www.rockraidersunited.com/topic/7381-li2-mod-manager/
 # LEGO-Island-2-Patcher
 This tool will allow users to easily apply patches to the PC game LEGO Island 2: The Brickster's Revenge.
 
-##!!! Note !!! This only works with the English version of the game. Also, some patches may not work depending on which revision of the game you have.
+!!! Note !!! This only works with the English version of the game. Also, some patches may not work depending on which revision of the game you have.
 
 It supports the following patches:
 
