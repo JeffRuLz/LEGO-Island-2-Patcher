@@ -1,5 +1,10 @@
+This project has been replaced by the LI2 Mod Manager. Only use if you want a simple version of this program.
+http://www.rockraidersunited.com/topic/7381-li2-mod-manager/
+
 # LEGO-Island-2-Patcher
 This tool will allow users to easily apply patches to the PC game LEGO Island 2: The Brickster's Revenge.
+
+##!!! Note !!! This only works with the English version of the game. Also, some patches may not work depending on which revision of the game you have.
 
 It supports the following patches:
 
@@ -17,8 +22,7 @@ It supports the following patches:
 
 -Disable (or force unskippable) the intro video
 
-Note: Some patches may not work depending on which revision of the game you have.
-This program will automatically make a backup of your LEGO Island 2.exe file. Do not delete it, as it is used to remove patches.
+Note: This program will automatically make a backup of your LEGO Island 2.exe file. Do not delete it, as it is used to remove patches.
 
 #Installation
 Download the latest release:
